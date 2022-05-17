@@ -16,4 +16,9 @@ mkdir build
 cd build
 cmake ..
 make
+make db_builder
+// download jsons from riot. This sucks. TODO: add autodownload to db_builder
+curl --remote-name-all --parallel https://dd.b.pvp.net/latest/core/pl_pl/data/globals-pl_pl.json https://dd.b.pvp.net/latest/set1/pl_pl/data/set1-pl_pl.json https://dd.b.pvp.net/latest/set2/pl_pl/data/set2-pl_pl.json https://dd.b.pvp.net/latest/set3/pl_pl/data/set3-pl_pl.json https://dd.b.pvp.net/latest/set4/pl_pl/data/set4-pl_pl.json
+./bin/db_builder
+make card_api_example
 ```
